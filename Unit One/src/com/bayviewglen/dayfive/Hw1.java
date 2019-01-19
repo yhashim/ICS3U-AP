@@ -16,6 +16,7 @@ public class Hw1 {
 		double total = price + (price*tax/100); 
 		
 		System.out.println("The total price of the purchase $"+((Math.round(total*100))*0.01));
+
 	}
 
 }
