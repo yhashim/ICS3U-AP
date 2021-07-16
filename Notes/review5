@@ -1,0 +1,82 @@
+Random:
+	- A method w/ same name as class is a constructor
+		○ It constructs/prepares an object
+	- When you initialize ArrayList, the size is 0
+
+What is an ArrayList?
+	- A complex data structure that allows you to add or remove objects from a list and it changes size automatically
+
+Declaring an ArrayList Object:
+	- An ArrayList is an object of the ArrayList class
+		○ Therefore to create an ArrayList, you need to use the keyword "new" w/ the constructor
+		○ You must know data type for the objects being stored (is stated in <>)
+		Two general ways to declare ArrayList:
+			ArrayList<ClassName> nameOfArrayList = new ArrayList<ClassName>();
+			OR
+			List<ClassName> nameOfArrayList = new ArrayList<ClassName>;
+			
+An ArrayList starts off empty…
+
+An ArrayList is resizable:
+	- ArrayLists automatically resize when elements are added/subtracted from the list
+	- The size() method automatically recalculated how many elements are on the list
+
+An ArrayList can only store Objects:
+	- Unlike arrays that only store primitive vars (ints, doubles) and objects, ArrayLists can ONLY store OBJECTS
+		- To store an int/double in an ArrayList, you must use the Integer or Double wrapper classes
+		- Eg. ArrayList<Integer> myFavIntegers = new ArrayList<Integers>();
+		myFavIntegers.add(10); // this wraps (boxes) the 10 to be an Integer
+
+ArrayLists have methods:
+	- ArrayList class comes w/ a bunch of methods
+		○ .add(E object)
+			§ This appends object to the end of the list
+			§ Returns the value true
+			§ Size() automatically updated
+		○ .add(int index, E object)
+			§ Inserts object at said index
+			§ Pushes all objects after it down one index
+			§ Returns no boolean value
+		○ .remove(int index)
+			§ Removes element at index
+			§ Pushes objects after it backwards to take its place
+			§ Returns a reference to the object that was removed
+		○ .get(int index)
+			§ Returns the object at said index from the ArrayList
+		○ .size() method
+			§ Tells us the number of items in the array
+			§ It tells us how many slots there are, even if they are empty one
+		○ .set(int index, E object)
+			§ Replace object in said index with E object
+			§ Returns reference to the object previously at the index
+
+IndexOutOfBoundsException:
+	- If you try to access an index in the ArrayList that does not exist, we get this exception
+
+Traversing an ArrayList using for loop:
+	for(int i  = 0; i<ArrayList.size(); i++) {
+		…;
+	}
+	
+Traversing an ArrayList using for-each loop:
+	for(ObjectType fakeName : ArrayListWeAreIterating) {
+		…;
+	}
+	
+Printing ArrayList contents:
+	- You can literally print it like:
+		○ System.out.println(myDoubles);
+		○ Output: […, …, …, …]
+
+Do not use remove() with for-each loops:
+	- You need the index to remove(), but for-each doesn’t use indexes
+	- Instead use an index var with a while loop
+		○ Increment to get to next element in list
+		○ If you remove something, don't increment
+		int index = 0;
+		while (index < ArrayList.size()){
+			if(ArrayList.get(index) fulfils said condition)
+				ArrayList.remove(index);
+			else
+				Index++;
+		}
