@@ -1,0 +1,38 @@
+Abstract classes:
+	- unfinished class
+	- cannot instantiate it
+Interface:
+	- only made up of abstract methods (you don't have to write abstract on any of the methods)
+	- cannot be instantiated
+
+Overloading vs Overriding
+  Overloading:
+    - Different versions of the same method (same name) with diff signatures (takes different arguments)
+    - In same class
+  Overriding:
+    - Different versions of the same method (same name) with same signatures (takes same arguments)
+    - Not good if in same class but okay if in another class (for inheritance)
+    
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Different types of integers are supported by Java to allow different amounts of taking up space:
+In order of smallest range to largest:
+	- Byte
+		○ 8 bits
+		○ Max: 127 (0 is included as positive num)
+		○ Min: -128 (min abs val. is always 1 more than max)
+	- Short 
+		○ 16 bits
+	- Int
+		○ 32 bits
+	- Long 
+		○ 64 bits
+
+Decimal (base 10: 1-9)
+	
+Binary system (base 2: 0 and 1)
+
+Octal (base 8: 1-7)
+
+Hexadecimal (base 16, 16 bits):
+	Base 16: 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
