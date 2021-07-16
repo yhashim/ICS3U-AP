@@ -1,0 +1,66 @@
+Quadratic algorithm (for loop in a for loop):
+
+Selection Sort (easy to understand, inefficient - especially if it's already sorted):
+	- Sorts elements to be in order
+	- Selects smallest item on the unsorted side and swaps it with the front of the unsorted side
+		○ Repeats until only one element left on the unsorted side (the smallest on the unsorted, largest on sorted side)
+Code: 
+  for (int i = 0; i < arr.length-1; i++) {
+    int minIndex = i;
+    for (int j = i+1; i < arr.length; j++) {
+      if (arr[j] < arr[minIndex]) {
+      minIndex = j;
+      }
+    }
+    int temporary = arr[i];
+    arr[i] = arr[minIndex];
+    arr[minIndex] = temporary;
+  }
+How code does it:	
+- Iterate through the unsorted side to locate the smallest item	for
+- Swap the smallest item with the first item in the unsorted side	
+- Repeat	       
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Insertion Sort (easy to understand, inefficient - especially if all the elements are BACKWARDS):
+	- Sorts elements to be in order
+	- Only good if the elements are already sorted (iterates the least amount of times)
+Code:
+  for (int i = 0; i < arr.length; i++) {     int temporary = arr[i];
+       int j;
+       for (j = i; j > 0 && arr[j] < arr[j-1]; j--){
+            arr[j] = arr[j-1];
+       }
+       arr[j-1] = temporary;
+  }
+How code does it:
+- Starts with the first element considered to be sorted	for
+- Compares first element in unsorted side with last element of sorted side and moves it if it needs to	
+- If it is in the right place, it moves the sorted side line over	  
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Binary Search (tells you where said value is):
+	- Works when the elements are already sorted
+	- Can be done two different ways
+Code:
+  int low = 0;
+  int mid = (low+high)/2;
+  int high = arr.length - 1;
+  while (low<=high) {
+    if (arr[mid] == value){
+      return mid;
+    } else if (arr[mid] > value) {
+      high = mid-1;
+    } else {
+      low = mid +1;
+    }
+  }
+  return -1; // it's not there
+How code does it:	
+- Look between the low and high	
+- Look at the middle for the number we want
+- If the value is smaller, change the low to mid+1 and look between that and highest	
+- If the value is bigger, change the high to mid-1 and look between that and highest	
+- If the high is ever smaller than the low, the value is not in the loop
