@@ -1,0 +1,18 @@
+A recursive function is a function that calls itself
+		○ It is not the same as nested for or while loops
+		○ It always has a base case that tells it when to stop calling itself
+
+Recursion is specifically a technique that can solve a problem, where the solution can be found by making subsequently 
+smaller iterations of the same problem.
+
+Each time the recursive method calls itself because the base case isn't satisfied, the method temporarily sets aside the 
+call before making a new call to itself. This continues until the base case is satisfied. Then the method stops calling itself, 
+and returns the values up to the previous method calls. Since the calls are placed on a stack, the returns are executed in the 
+reverse of how they were placed.
+
+Each successive call of the method should bring he value of the parameter closer and closer to making the base case true - 
+otherwise we would have a stack overflow error.
+
+Tracing:
+When tracing a recursive method call, write each call to the method including the parameter. When the base case is reached, 
+replace the result from each method call with the result, one at a time.
