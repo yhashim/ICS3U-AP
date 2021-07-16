@@ -1,0 +1,129 @@
+Arrays:
+	What it is:
+	An array stores a series of related values all of the same type. Therefore if it is initialized to hold ints, it only holds ints.
+	******* An array is not resizable once created!*******
+	Arrays are visualized like strings.
+	An array is not primitive - it is a reference type but not an object type. Since it is not an object it has no methods. Since an array is a reference type, when we pass it in to a method and make changes, the method directly changes the array (the reference).
+	One property of an array is called length
+		eg. a var called arr holding an array can use arr.length to access its length
+		it is not arr.length() (brackets) because it is NOT A METHOD, it is a PROPERTY
+	
+	Initializing an array:
+		When we don't put the values in first:
+		int[] arr = new int[5];
+		// declared a reference to an int array.
+		// constructs a new int array of size 5
+		// assigns the variable arr to the new int array
+		
+		When we know the values and want to put them in while initializing the array:
+		int[] arr = {3, 5, 6, 10, -2, 11};
+		Once initialized by this method, we cannot do this: 
+		arr = {2, 3};
+		However we can change the reference of the array by doing this:
+		arr = new int{2, 3};
+	
+	Accessing elements from the array:
+	To access the individual elements we use []
+		e.g. if the array is called arr, and we want to access the element at the 4th index and assign its value to be 1:
+		arr[4] = 1;
+		
+	Defaults:
+		int[] arr = new int[5];
+		// automatically filled with all 0's
+		String[] arr = new String[5];
+		// automatically filled with all 'null's
+		
+	Methods getting Max/Min Values:
+		public static int maxValue(int[] arr) {
+			// this finds the max element
+			int max = arr[0];
+			
+			for (int i = 1; i < arr.length; i++) {
+				if (arr[i] > max) {
+					max = arr[i];
+				}
+			}
+			return max;
+		}
+		
+		public static int getMaxIndex(int[] arr) {
+			// this is finding the LOCATION of the max element
+			int maxIndex = 0;
+			
+			for (int i = 1; i < arr.length; i++) {
+				if (arr[i] > arr[maxIndex]) {
+					maxIndex = i;
+				}
+			}
+			return maxIndex;
+		}
+		
+Sequential Search:
+	Finds index of specified element we are searching for in an array:
+		private static int sequentialSearch(int[] arr, int value) {
+			for (int i = 0; i < arr.length; i++) {
+				if (arr[i] == value) {
+					return i;
+				}
+			}
+			return -1;
+		}
+		
+Storing String Literals vs String Objects:
+		arr[0] = "Apple";	// String Literal
+		arr[1] = "Apple";	// String Literal
+		arr[2] = "Grapes";	// String Literal
+		arr[3] = new String("Apple");	// String Object - not a String Literal - stored differently
+		
+		// using "==" checks for if they have the same REFERENCE
+		// use ".equals" to check if they are the same because sometimes the reference is different
+		System.out.println(arr[0] == arr[1]);	// true
+		System.out.println(arr[0] == arr[4]);	// false
+		System.out.println(arr[0].equals(arr[4]));	// true
+		
+Printing an Array:
+	System.out.println(arr); // prints out the array's address
+	To print an array:
+		for (int i=0; i<arr.length; i++){
+			System.out.println(arr[i]);
+		}
+		for (String item : arr) {
+    System.out.println(item);
+}
+
+For-each Loops:
+	Purpose: to iterate through the array or collection from beginning to end
+	int i = 0;
+	// there is no index - if you need an index, don't use a for-each loop, use the for loop
+	for (String el : arr) {
+		// syntax: variable that will be a copy of the next element : the collection to iterate through
+		// el iterates through the multiple elements of the array - referencing to their references
+		System.out.println(el);
+		System.out.println(arr[i]);
+		i++;
+	}
+
+2 Dimensional Arrays:
+	An array holding elements which hold individual arrays
+	To initialize a 2D array:
+		int[][] arr2D = new int[3][5];
+			// has 3 rows, 5 columns
+			// always declared in order ROWs then COLUMNS
+	To iterate through a 2D array, we need to tackle one row at a time.
+	Then do the columns.
+		int sum = 0;
+		for (i = 0; i<arr2d.length; i++) {
+			// this outer for loop goes through the ROW
+			for (int j = 0; j<arr2d[i].length; j++) {
+				// this inner loop goes through the COLUMNS
+				Sum += arr[i][j];
+			}
+		}
+	We iterate through arrays in row-major order.
+	Reminder: You cannot reinitialize with curly braces after initializing an array, however you can if you write: arr = new int {………….};
+
+Constructors:
+	• A constructor doesn’t have a return type.
+	• The name of the constructor must be the same as the name of the class.
+	• Unlike methods, constructors are not considered members of a class.
+	• A constructor is called automatically when a new instance of an object is created.
