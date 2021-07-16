@@ -1,0 +1,228 @@
+Syntax:
+	• The language of the code (structure, order etc.), the words that you use to write something
+	• A Syntax error can happen if you forget a part of the language, for example a semicolon, and it stops the code from working
+	• You have to fix every single syntax error in your code to let your program run
+	• If it has an error then you can’t compile the code, so you get a compile time error
+	• One thing that’s important to know: // or /* */ are ways to make comments in the code
+		○ Lets the reader know what’s going on
+	• The semicolon is a character that tells the code that the instruction has ended
+		○ When you compile the code, it knows that one instruction has been completed
+Console:
+	• The console is where the output of the code comes out
+	• Three things that you should know that let you bring things out to the console:
+		○ System.out.print();
+      cursor stays on line
+		○ System.out.println();
+      cursor moves on to new line
+
+Primitive Variables: the most basic datatypes
+	• What you need to know
+		○ How to visualize data
+		○ Doubles, int, booleans
+	• You can store an int, double or boolean by making a variable
+	• When you make a variable the computer gives it space in the RAM even if you don’t give it a value
+	• To give something a value you give it an assignment operator (=). This changes the value.
+	• When a programmer decides to make a variable or decides to store a value into the variable, the datatype of the variable must have been set.
+		○ Must declare int, double or boolean, etc
+	Declaring Primitive Variables
+		○ To declare a variable, you do: dataType variableName;
+		○ To initialize a variable, you do: dataType variableName = value;
+		○ Once you create a variable, it is stored in the RAM and has a memory address
+		○ Throughout the code you can refer to the variable, or change it, and it basically goes back into the memory address and changes the value (UNLIKE STRINGS)
+Naming Conventions
+		○ When you name a variable you must follow the naming conventions
+		○ Don’t use one letter, give it a name that makes sense
+		○ For a multiword name you camel case (exampleOneHere)
+		○ You cannot use a number or a hashtag symbol at the beginning of the name
+		○ The name should be concise
+Boolean
+		○ If you want to store a value of true or false, use a boolean
+		○ You cannot store a number in a boolean
+Keywords in Java
+		○ Java has specific words that are part of the language
+		○ You cannot ever use these as names of variables, or else it will confuse the codes as it compiles and creates a syntax error, so you cannot run the program
+		○ For example, You cannot do int public = 6;
+Mathematical Operations
+	• Java follows BEDMAS
+	• By priority, parenthesis are first, multiplication division and modulus are second (from left to right) and addition and subtraction are last (left to right)
+	
+	Multiplication	Division	Modulus	Addition	Subtraction
+	*	/	%	+	-
+	Multiplication: X * 2; X*=2;
+  Division: X/2; X/=2;
+  Modulus: X % 1;	X %= 1;
+  Addition: X + 1; X++; ++X;
+  Subtration: X - 1; X--; --X;
+
+	int x = 12;
+	x = x % 7;
+	System.out.println(--x); // return 4
+	int x = 12;
+	x = x % 7;
+	System.out.println(x--); // return 5
+	
+	Types of Division (IMPORTANT):
+	        Integer division: int/int = int 
+            // decimals are truncated (cutting it off)     
+          Double division: double / int = double; int / double = double; double / double = double;
+
+	ArithmeticException:
+	The following produce run-time errors called an ArithmeticException
+		○ int/0
+			int x = 7/0 
+				//gives ArithmeticException 
+		○ int%0
+		○ Integer division ONLY
+			Double x = 7/0.0
+				// gives ‘infinity’
+	
+  The Assignment Operator:
+		○ Used to assign values or change values throughout the code (=)
+		○ Must be VAR = VAL, NOT VAL = VAR
+		○ Assignment statements are processed Right to Left (value is processed, then assigned to left)
+	Casting:
+		○ Temporarily lets computer view value as a different datatype
+				Examples:
+				int points = 7;
+				int marksOnTest = 12;
+				double percent = (double) points / marksOneTest;
+	You cannot do this!:
+	    int points = 7;
+			int marksOnTest = 12;
+			double percent = (double) (points / marksOnTest);
+				// this makes it a double AFTER division and does not give us the value we want (the decimals are already truncated)
+	Relational Operators: 
+		○ Can be used to compare things
+		        Equal	        Less	        Less or equal	        Greater	        Greater or equal	        Not ___
+		        ==	            <	               <=	                 >	                 >=	                  !__
+	The not operator: add ! before relational operator
+		Eg. Not equal to: !=
+
+Types of Errors:
+  Compile-time Errors: syntax error, cannot compile code
+  Run-time Exceptions: crashes code (something isn’t right!)
+	Logic Errors: everything runs smoothly but there’s an error in the logic that you used, so the code is not giving you exactly what you want. This is the hardest error to notice and fix.
+Debugging: finding errors in the code (eg. is a semicolon missing?)
+
+The String Class:
+	• A STRING IS AN OBJECT
+	• Strings can store letters, words, etc.
+	• String Concatenation is to connect/join things together
+	The General Way to Make a String:
+	String nameOfString = “characters that make up a sentence”;
+	// the quotations with words inside is called a String literal
+	// these can be reused throughout the code
+	Making a String Object from the String Class:
+	String nameOfString = new String(“characters that make up a sentence”);
+  // has its own address, cannot be referenced to string literal
+  String name = new String(); //empty string
+  String name1; //string is null
+	• How do you represent (visually) a string object?
+		○ String name
+		○ Has a box with an arrow (points to the address)
+		○ The address is a column divided into characters of indices 0-n
+  String Concatenation:
+	• Joining strings together is considered concatenation
+	• You can concatenate other objects/primitive data types as well (mix and match, etc.)
+	• Eg. of concatenation with + and =
+		String firstName = “Smu”, lastName = “Qu”, space = “ “;
+		String fullName = firstName+space+lastName;
+		// return “Smu Qu”
+  Comparing Strings
+	• The .equals method or compareTo method
+		○ Determines if the character sequence is exactly the same
+	.equals Method:
+		○ Looks at both options and returns true/false if they are identical/or not
+		Eg:
+				String hi = “hi”, hi1 = “hi”;
+				System.out.print(hi.equals(hi1));
+				// returns true
+				System.out.print(!hi.equals(hi1));
+				// returns false
+  DON’T USE == TO COMPARE STRINGS!
+		○ It seems to be working sometimes but it doesn’t compare the strings
+		○ It compares the address/reference and therefore may sometimes return the wrong answer (true/false)
+  compareTo Method:
+		○ Returns an integer
+			Num can be pos, neg, or zero
+				POS:  first string is alphabetically lower (closer to z)
+				(First string comes AFTER second string)
+				NEG: first string is alphabetically higher (closer to a)
+				(First string comes BEFORE second string)
+				Zero: strings are identical
+		○ Example:
+				String firstString = “Hello”;
+				String secondString = “Goodbye”;
+				Int score = firstString.compareTo(secondString);
+				//gives back +1
+  .length() Method:
+		○ Tells us the length of given string
+		String hi = “hi”;
+		System.out.println(hi.length()); // returns 2
+  NullPointerException:
+		○ Run-time error for finding length of a string of value null
+  indexOf() Method:
+		○ Finds the index of string inside string
+		○ If not found returns -1
+		○ Example:
+				String sport = “soccer”;
+		Int result = sport.indexOf(“e”);
+		//returns 4;
+  .substring() Method:
+		○ Extract substring of string (a, b) (a is startpoint inclusive) (b is endpoint exclusive)
+		○ Example:
+				String a = “Helicopter”;
+				String str = a.substring(1, 4)
+				//returns ‘eli’
+		○ If a and b are equal, return “”
+  StringIndexOutOfBoundsExeption:
+		○ Comes from accidentally using an index greater than / equal to the length of the string (since indices are shifted one backwards)
+  A STRING IS IMMUTABLE:
+		○ Cannot be changed once created
+		○ Can only change address
+  Escape Sequences:
+		○ Allows you to print characters which would normally confuse Java by escaping them (putting \ in front of it)
+			Eg. to use double quotations, or a backslash
+				System.out.print.ln(“\”no\””); // prints “no”
+				System.out.println(“\\”); //prints \
+				Tab	   New line
+				\t	     \n
+				System.out.println(“a \t b \t c”);	System.out.println(“n\np”);
+				//returns: a       b c	// return 
+					n
+					p
+
+The Math, Integer, and Double Classes
+  The Math Class:		
+    Math.pow(a,b)
+    Math.sqrt(a,b)
+    Math.abs(a,b)
+    Math.random() (between 0 and 1 - not including 1)
+            • To get a range from 0 - n, do (Math.random() * n+1)
+            • Do (Math.random() * n+1) + startNum to start at startNum not 0
+  Tolerance
+    double a = 12.7;
+    double b = 20.2;
+    double tolerance = 0.0001; 
+    // tolerance is how far off the num can be
+    boolean equalsKinda = (Math.abs(a-b) <= tolerance);
+      // if the value of a-b is less than or equal to the tolerance difference, then they equalKinda
+The Integer Class:
+	• Can turn an int from primitive to object through wrapping class
+    int x = 19;
+    Integer xObject = new Integer(x);
+    //int is primitive; Integer is an object
+	• You can also refer to the object and get its value by using .integerValue();
+		○ Eg. xObject.integerValue() = 19
+	Fields of the Integer Class:
+		○ MAX_VALUE and MIN_VALUE
+		○ Not methods (therefore no ())
+			MAX_VALUE = 2^31 - 1
+			MIN_VALUE = -2^31 
+				If you use these numbers/greater/lesser numbers, you will receive an arithmetic overflow
+The Double Class:
+	• A wrapper class for primitive doubles - allows you to make them objects
+	• Example:
+		double y = 12.346;
+		Double yObject = new Double(y);
+		Double result = yObject.doubleValue();
