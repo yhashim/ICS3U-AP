@@ -1,0 +1,91 @@
+Boolean Expressions:
+Boolean expressions evaluate to true or false. They can be simple expressions or compound expressions.
+	int x = 7;
+	boolean xGreaterThan2 = (x > 2);
+	// this boolean (x > 2) is a simple expression
+	boolean xIsSpecial = (x > 2) && (x % 7 = 0);
+	// this boolean (x > 2) && (x % 7 = 0) is a compound expression because it is multiple simple expressions joined with and (&&) OR or (||) operators. These small expressions in the compound expression are called operands.
+	
+	Truth Tables:
+	A && B:
+	T && T	T
+	T && F	F
+	F && T	F     //short-circuit
+	F && F	F     //short-circuit
+	
+	A || B:
+	T || T	T     //short-circuit
+	T || F	T     //short-circuit
+	F || T	T   
+	F || F	F     
+	
+	If, else if, else:
+	If is used to do something if certain parameters are met. If it is met, the code does said function, and the code stops. If the conditions are not met, it moves on to the else ifs and goes through them to find one that is true. If none of them are true, it does the else.
+	Eg.  
+		int x = 7;
+		if (x > 10) {
+			System.out.println("X is greater than 10!");
+		} else if (x > 9) {
+			System.out.println("X is greater than 9!");
+		} else if (x > 8) {
+			System.out.println("X is greater than 8!");
+		} else {
+			System.out.println("X is a small number");
+		}
+
+Dangling else:
+The else sticks on to the closest if statement. Make sure you use your brackets properly to make sure it works, or use If, else if, else.
+The SCOPE of a variable is where it EXISTS. A variable only exists WITHIN THE CURLY BRACES it was declared in.
+
+Iterations and Loops:
+	We know 2 types of loops: for, and while. For loops are used when we are counting (know how many times we will use the loop). While loops are used when we DON'T know how many times the loop will loop.
+	
+	While loops:
+	While (condition) {
+		//use curly braces for multiple lines of what to do
+	}
+	While 
+		//don’t have to use braces for ONE LINE ONLY
+	
+	For loops:
+	For loops have 4 parts:
+		1. Initialize the counter 
+			(int i = 0;)
+		2. Set a condition (keep doing it until this condition is no longer true)
+			(i < 10;)
+		3. Increment the counter
+			(i ++)
+		4. Stuff in the {}
+	
+	The for loop works in the order: 1, 2, 4, 3, 2, 4, 3…
+		Initializes the counter, then checks the condition, does the stuff in {}, then adds to counter, repeats
+	
+	How to build a grid! (use for loops bc we know how many times to loop)
+	for (int i = 0; i < 10; i++) {
+		// makes 10 rows
+		for (int z = 0; z < 5; z++) {
+			// makes 5 columns
+			System.out.print(".");
+			// make sure that the line above is NOT println!
+		}
+		System.out.println("");
+		// YOU NEED THIS LINE TO MOVE TO NEXT LINE
+	}
+
+DeMorgan's Law:
+	AND   (&&):
+		X && false == false;
+		X && true == x;
+		X && X == x;
+		X && !X = false;          // one of the x's are false
+	OR    (||):
+		X || false == x;
+		X || true == true;      // short circuit bc we have one true
+		X || X == x;
+		X || !X = true;            // one of the x's are true
+	
+	NOT (!) Distribution:
+		&& becomes ||
+		|| becomes &&
+		! Is cancelled out
+		Variables become !
